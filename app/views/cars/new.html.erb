@@ -1,0 +1,61 @@
+<link href='https://fonts.googleapis.com/css?family=Averia Serif Libre' rel='stylesheet'>
+	
+<div id ="shift_listing">	
+
+	<h1 id="font_for_list_your_car">List Your Car</h1>
+
+	<div id="font_for_list">
+	<p>
+		<%= form_for @car, :url => "/cars/", :html => { :multipart => true } do |form| %>
+		<%= form.label :Owner %>:
+		<%= form.text_field :owner, :required => 'required' %>
+		<%= form.label :Email %>:
+		<%= form.text_field :email, :required => 'required' %>
+	</p>
+	<p>
+		Location: <%= form.select(:town, options_for_select([['Allendale', 'Allendale'], ['Alpine', 'Alpine'], ['Bergenfield', 'Bergenfield'], ['Bogota', 'Bogata'], ['Carlstadt', 'Carlstadt'], ['Cliffside Park', 'Cliffside Park'], ['Closter', 'Closter'], ['Cresskill', 'Cresskill'], ['Demarest', 'Demarest'], ['Dumont', 'Dumont'], ['East Rutherford', 'East Rutherford'], ['Edgewater', 'Edgewater'], ['Elmwood Park', 'Elmwood Park'], ['Emerson', 'Emerson'], ['Englewood', 'Englewood'], ['Englewood Cliffs', 'Englewood Cliffs'], ['Fair Lawn', 'Fair Lawn'], ['Fairview', 'Fairview'], ['Fort Lee', 'Fort Lee'], ['Franklin Lakes', 'Franklin Lakes'], ['Garfield', 'Garfield'], ['Glen Rock', 'Glen Rock'], ['Hackensack', 'Hackensack'], ['Harrington Park', 'Harrington Park'], ['Hasbrouck Heights', 'Hasbrouck Heights'], ['Haworth', 'Haworth'], ['Hillsdale', 'Hillsdale'], ['Ho-Ho-Kus', 'Ho-Ho-Kus'], ['Leonia', 'Leonia'], ['Little Ferry', 'Little Ferry'], ['Lodi', 'Lodi'], ['Lyndhurst', 'Lyndhurst'], ['Mahwah', 'Mahwah'], ['Maywood', 'Maywood'], ['Midland Park', 'Midland Park'], ['Montvale', 'Montvale'], ['Moonachie', 'Moonachie'], ['New Milford', 'New Milford'], ['North Arlington', 'North Arlington'], ['Northvale', 'Northvale'], ['Norwood', 'Norwood'], ['Oakland', 'Oakland'], ['Old Tappan', 'Old Tappan'], ['Oradell', 'Oradell'], ['Palisades Park', 'Palisades Park'], ['Paramus', 'Paramus'], ['Park Ridge', 'Park Ridge'], ['Ramsey', 'Ramsey'], ['Ridgefield', 'Ridgefield'], ['Ridgefield Park', 'Ridgefield Park'], ['Ridgewood', 'Ridgewood'], ['River Edge', 'River Edge'], ['River Vale', 'River Vale'], ['Rochelle Park', 'Rochelle Park'], ['Rockleigh', 'Rockleigh'], ['Rutherford', 'Rutherford'], ['Saddle Brook', 'Saddle Brook'], ['Saddle River', 'Saddle River'], ['South Hackensack', 'South Hackensack'], ['Teaneck', 'Teaneck'], ['Tenafly', 'Tenafly'], ['Teterboro', 'Teterboro'], ['Upper Saddle River', 'Upper Saddle River'], ['Waldwick', 'Waldwick'], ['Wallington', 'Wallington'], ['Washington', 'Washington'], ['Westwood', 'Westwood'], ['Wood-Ridge', 'Wood-Ridge'], ['Woodcliff Lake', 'Woodcliff Lake'], ['Wyckoff', 'Wyckoff']]))%>
+
+	</p>
+	<p>
+		<%= form.label :make %>:
+		<%= form.text_field :brand, :required => 'required' %>
+	</p>
+	<p>
+		<%= form.label :model %>:
+		<%= form.text_field :model, :required => 'required' %>
+	</p>
+	<p>
+		<%= form.label :year %>:
+		<%= form.text_field :year, :required => 'required' %>
+	</p>
+	<p>
+		<%= form.label :mileage %>:
+		<%= form.text_field :mileage, :required => 'required' %>
+	</p>
+	<p>
+		Available On: <%= form.datetime_select(:available_on, :discard_minute => true, :discard_hour => true, :order => [:month, :day])%>
+	</p>
+	<p>
+		Return Date: <%= form.datetime_select(:available_on, :discard_minute => true, :discard_hour => true, :order => [:month, :day])%>
+	</p>
+	<p>
+		<%= form.label :rent%>:
+		<%= form.text_field :rent, :required => 'required'%>
+	</p>
+	<p>
+		<%= form.label :description %>:
+		<%= form.text_area :description, as: :text, :input_html => {:rows => "20" }, :required => 'required' %>
+	</p>
+	</div>
+
+
+	<%= form.submit "List Your Car" %>
+	<%= form.file_field :avatar %>
+<% end %>
+
+</div>
+
+
+<div id="car_in_listing"><%=image_tag("car.png", :height => "275", :width => "auto")%></div>
+
+

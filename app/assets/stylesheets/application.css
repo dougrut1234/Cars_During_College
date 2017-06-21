@@ -1,0 +1,194 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+#course_wrap {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+#padding {
+	margin-top: 150px;
+}
+
+#font {
+	font-family: 'Averia Serif Libre';
+	font-size: 24px;
+	position: relative;
+	margin-left: 700px;
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+
+a {
+	text-decoration: none;
+	color: black;
+}
+#text_in_show {
+	text-align: center;
+	font-size: 24px;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+#btn {
+	margin-left: 90px;
+	font-size: 20px;
+	background: green;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 145px;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+#btn:hover {
+	background: #DAF7A6;
+}
+
+#car_in_town {
+	font-family: 'Averia Serif Libre';
+	font-size: 36px;
+	border-style: solid;
+	border-width: 3px;
+	border-left: 50%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 600px;
+	margin-left: 350px;
+	border-top: 0;
+	border-bottom: 0;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+#move_car{
+    bottom:15%;
+    position:absolute;
+    -webkit-animation-name: run;
+    -webkit-animation-duration: 1s;
+    float: left;
+	position: relative;
+	margin-top: 10px;
+	margin-left: 300px;
+}     
+@-webkit-keyframes run {
+    0% { left: 100%;}
+    100%{ left: 0;}
+}
+
+body {
+	background-color: #FAE5D3;
+}
+
+#font_for_cars_in {
+	font-family: 'Averia Serif Libre';
+	font-size: 84px;
+	text-align: center;
+}
+
+#font_for_town {
+	font-family: 'Averia Serif Libre';
+	font-size: 24px;
+	margin-left: 415px;
+	margin-top: -20px;
+
+}
+
+#font_in_show {
+	font-family: 'Averia Serif Libre';
+	margin-top: 175px;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+#btn_to_add {
+	float: right;
+	margin-top: -50px;
+	font-size: 16px;
+	margin-right: 50px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 105px;
+    text-decoration: underline;
+}
+
+#btn_to_add:hover {
+	background: yellow;
+}
+
+#font_for_list_your_car {
+	font-size: 48px;
+	font-family: 'Averia Serif Libre';
+}
+
+#font_for_list {
+	font-size: 16px;
+	font-family: 'Averia Serif Libre';
+}
+
+#shift_listing {
+	margin-top: 100px;
+	margin-left: 50px;
+}
+
+#car_in_listing {
+    position:absolute;
+	margin-left: 500px;
+	margin-top: -350px;
+	-webkit-animation-name: rev;
+    -webkit-animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+@-webkit-keyframes rev {
+    0% { left: 0;}
+    50% { left: 5%;}
+    100%{ left: 0;}
+}
+
+#image_resize {
+	margin-left: 525px;
+	position: absolute;
+	-webkit-animation-name: arrive;
+    -webkit-animation-duration: 3s;
+}
+@-webkit-keyframes arrive {
+    0% { left: 100%;}
+    30% { left: -20%;}
+    60% { left: 20%;}
+    100% { left: 0;}
+ }
+
+ #log_in_font {
+	font-family: 'Averia Serif Libre';
+	font-size: 32px;
+}
+
+.field {
+	font-family: 'Averia Serif Libre';
+	font-size: 24px;
+ }
+
+.field2 {
+	font-family: 'Averia Serif Libre';
+	font-size: 16px;
+ }
+
+ #log_in_shift {
+ 	margin-top: 200px;
+ 	margin-left: 100px;
+ }

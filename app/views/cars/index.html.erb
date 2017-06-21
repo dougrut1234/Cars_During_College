@@ -1,0 +1,33 @@
+
+<body id="course_wrap">
+
+<link href='https://fonts.googleapis.com/css?family=Averia Serif Libre' rel='stylesheet'>
+
+<div id="course_wrap">
+<p id="font_for_cars_in">CARS AVAILABLE FOR RENT</p>
+<p id="btn_to_add"><%= link_to("Add A Vehicle", new_car_path)%></p>
+
+<div id="padding">
+<% @cars.each do |car| %>
+
+	<div id="font_for_town"><%= car.town%></div>
+	<div id="move_car">
+		<%= image_tag car.avatar(:thumb) %><br>
+		<i><%= car.year %> <%= car.brand %> <%= car.model%></i><br>
+	</div>
+	<div id="font">
+		<%= number_with_delimiter(car.mileage, :delimiter => ',')%> Miles<br>
+		Available For Rent: <%= car.available_on%><br>
+		Expected Return Date: <%= car.available_on%><br>
+		Rent: $<%= car.rent%><br>
+		<p id="btn"><%= link_to("Select Vehicle", car_path(car)) %></p><br><br><br><br><br><br><br>
+	</div>
+</div>
+
+</body>
+
+<% end %>
+
+
+
+</div>

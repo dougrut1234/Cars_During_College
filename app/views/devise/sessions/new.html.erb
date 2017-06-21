@@ -1,0 +1,40 @@
+<link href='https://fonts.googleapis.com/css?family=Averia Serif Libre' rel='stylesheet'>
+<div id="course_wrap">
+
+  <h1 id="home_title">College Car Rentals</h1>
+  <p id="slogan">Now it's THEIR turn to make you money!</p>
+  <div id="dad_home"><%= image_tag("dad.png", :height => "200", :width => "auto") %></div><div id="student_home"><%= image_tag("student.png", :height => "175", :width => "auto") %></div>
+  <div id="car_home"><%= image_tag("car2.png", :height => "75", :width => "auto") %></div>
+  <p id="btn_for_bergen"><%= link_to("Bergen County", "/cars/")%>
+
+<div id="log_in_shift">
+<b><h2 id="log_in_font">Log in</h2></b>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %>:<br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>:<br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field2">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div><br>
+  <% end -%>
+
+  <div class="actions"><br>
+    <%= f.submit "Log in" %><br>
+  </div>
+<% end %>
+
+
+
+<%= render "devise/shared/links" %><br>
+</div>
+</div>

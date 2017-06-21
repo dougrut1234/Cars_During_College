@@ -1,0 +1,123 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#course_wrap {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+#home_title {
+	font-family: 'Averia Serif Libre';
+	font-size: 96px;
+	text-align: center;
+	background-color: #F9E79F;
+	padding-top: 80px;
+	padding-bottom: 60px;
+	width: 1500px;
+	margin-left: -100px;
+	margin-top: -40px;
+}
+
+#slogan {
+	font-family: 'Averia Serif Libre';
+	font-size: 24px;
+	float: right;
+	margin-right: 100px;
+	margin-top: -120px;
+	position: relative;
+}
+
+#about_home {
+	font-family: 'Averia Serif Libre';
+	font-size: 20px;
+	line-height: 30px;
+	margin-top: 80px;
+	margin-left: 50px;
+	margin-right: 50px;
+	padding-left: 150px;
+	padding-right: 150px;
+	background-color: #FDEBD0;
+	padding-top: 50px;
+	padding-bottom: 25px;
+	width: 1000px;
+	border-radius: 25px;
+}
+
+#btn_for_bergen {
+	margin-left: 10px;
+	margin-top: -64px;
+	font-size: 24px;
+	float: right;
+	background: #FFC300;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 160px;
+    text-decoration: none;
+}
+
+#btn_for_bergen:hover {
+	background: #DAF7A6;
+}
+
+
+#btn_for_signup {
+	margin-left: 600px;
+	margin-top: 50px;
+	font-size: 24px;
+	background: #FFC300;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100px;
+    text-decoration: none;
+}
+
+#btn_for_login {
+	margin-left: 600px;
+	margin-top: 50px;
+	font-size: 24px;
+	background: #FFC300;
+    padding-left: 20px;
+    padding-right: -15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 93px;
+    text-decoration: none;
+}
+
+
+#btn_for_login:hover {
+	background: #DAF7A6;
+}
+
+#btn_for_signup:hover {
+	background: #DAF7A6;
+}
+
+#student_home {
+	float: left;
+	margin-left: 60px;
+	margin-top: -250px;
+}
+
+#dad_home {
+	float: left;
+	margin-left: -40px;
+	margin-top: -280px;
+}
+
+#car_home {
+	float: right;
+	position: absolute;
+	margin-top: -210px;
+	margin-left: 1125px;
+	-webkit-animation-name: home;
+    -webkit-animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+@-webkit-keyframes home {
+    0% { left: 0;}
+    50% { left: 4%;}
+    100% { left: -2%;}
+}
