@@ -20,6 +20,7 @@
 		Available For Rent: <%= car.available_on%><br>
 		Expected Return Date: <%= car.available_on%><br>
 		Rent: $<%= car.rent%><br>
+		<p id="edit"><%= link_to("Edit", edit_car_path(car)) %> <%= link_to("Delete", car_path(car), method: :delete) %></p>
 		<p id="btn"><%= link_to("Select Vehicle", car_path(car)) %></p><br><br><br><br><br><br><br>
 	</div>
 </div>

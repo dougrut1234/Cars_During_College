@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 	post "/user" => "registrations#create"
 	end
   get "/" => "home#index", as: "home"
- 
+  get 'edit' => "cars#edit"
+  post 'edit' => "cars#update"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

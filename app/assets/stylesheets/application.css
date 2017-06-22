@@ -192,3 +192,18 @@ body {
  	margin-top: 200px;
  	margin-left: 100px;
  }
+
+ #description {
+ 	font-family: 'Averia Serif Libre';
+ 	padding-left: 500px;
+ 	padding-right: 500px;
+ 	font-size: 14px;
+ }
+
+ #edit {
+ 	font-family: 'Averia Serif Libre';
+ 	font-size: 12px;
+ }
+
+
+

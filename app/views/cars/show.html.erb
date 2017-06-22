@@ -11,30 +11,17 @@
 		<%= number_with_delimiter(@car.mileage, :delimiter => ',')%> Miles<br><br>
 		Available For Rent: <%= @car.available_on%><br>
 		Expected Return Date: <%= @car.available_on%><br><br>
-		Rent: $<%= @car.rent%><br><br><br>
+		Rent: $<%= @car.rent%><br><br><br><br>
 	</div>
 	</div>
+  <div id="description"><%= @car.description%></div><br><br><br>
 	</div>
 </div>
 </div>
 
 
 <div align="center">
-  <h3>Interested? Send a message to owner, <%= @car.car_owner%></h3>
-
-  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-    <%= f.input :name, :required => true %><br>
-    <%= f.input :email, :required => true %><br>
-    <%= f.input :message, :as => :text, :required => true %>
-    <div class= "hidden">
-      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
-    </div>
-    <div>
-      </br>
-      <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
-    </div>
-  <% end %>
-</div>
-
+  <h3>Interested? Send a message to owner, <%= @car.owner%></h3>
+  <%= @car.email%><br><br><br><br><br>
 
 </body>
