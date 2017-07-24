@@ -1,8 +1,10 @@
 class CarsController < ApplicationController
 
-# before_action :authenticate_user!
+before_action :authenticate_user!
+
+
 def index
-	@cars = Car.all
+	@cars = Car.order('town ASC')
 end
 
 def show
@@ -14,19 +16,21 @@ def new
 end
 
 def create
-	@car = Car.new(car_params)
-	if @car.save!
+	@car = current_user.cars.create(car_params)
+	if @car.valid?
 		flash[:notice] = "Your location has been saved."
 		redirect_to "/cars/"
 	else
 		flash[:notice] = "Your profile was NOT created."
-		redirect_to "/"
+		render 'new'
 	end
 end
 
 def edit
 	@car = Car.find(params[:id])
+
 end
+
 	
 
 def update
@@ -41,9 +45,9 @@ def update
     @car.available_on = params[:car][:available_on]
     @car.available_until = params[:car][:available_until]
     @car.description = params[:car][:description]
-    @car.price = params[:car][:rent]
-	if @car.save!
-		redirect_to car_path
+    @car.rent = params[:car][:rent]
+	if @car.save
+		redirect_to "/cars/"
 	else
 		redirect_to "/"
 	end
@@ -58,7 +62,7 @@ def destroy
 private
     
     def car_params
-      params.require(:car).permit(:owner, :email, :town, :brand, :model, :available_until, :rent, :year, :mileage, :available_on, :description)
+      params.require(:car).permit(:owner, :email, :town, :user_id, :brand, :model, :available_until, :rent, :year, :mileage, :available_on, :description, :avatar)
     
     end
 

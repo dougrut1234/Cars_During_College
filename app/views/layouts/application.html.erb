@@ -15,14 +15,22 @@
 <link href='https://fonts.googleapis.com/css?family=Averia Serif Libre' rel='stylesheet'>
 <div id="course_wrap">
 
+<% if user_signed_in? %>
+        <li><%= link_to "Logout", destroy_user_session_path, :id => "logout", :method => :delete %></li>
+    <%end%>
+
 	<h1 id="home_title">College Car Rentals</h1>
 	<p id="slogan">Now it's THEIR turn to make you money!</p>
 	<div id="dad_home"><%= image_tag("dad.png", :height => "200", :width => "auto") %></div><div id="student_home"><%= image_tag("student.png", :height => "175", :width => "auto") %></div>
 	<div id="car_home"><%= image_tag("car2.png", :height => "75", :width => "auto") %></div>
-	<p id="btn_for_bergen"><%= link_to("Bergen County", "/cars/")%>
+	<p id="btn_for_bergen"><%= link_to("Bergen County", "/cars/")%></p>
+  <p id="btn_for_home"><%= link_to("Home", "/")%></p>
+
+
 
 
 
     <%= yield %>
+
   </body>
 </html>

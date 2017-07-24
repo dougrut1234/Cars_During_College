@@ -10,23 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621051712) do
-
-  create_table "bergen_counties", force: :cascade do |t|
-    t.string "owner"
-    t.string "owner_email"
-    t.string "town"
-    t.string "brand"
-    t.string "model"
-    t.integer "year"
-    t.integer "mileage"
-    t.date "available_on"
-    t.date "available_until"
-    t.integer "rent"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20170712014723) do
 
   create_table "cars", force: :cascade do |t|
     t.string "owner"
@@ -42,26 +26,11 @@ ActiveRecord::Schema.define(version: 20170621051712) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.string "avatar_file_name"
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
-  end
-
-  create_table "essex_counties", force: :cascade do |t|
-    t.string "owner"
-    t.string "owner_email"
-    t.string "town"
-    t.string "brand"
-    t.string "model"
-    t.integer "year"
-    t.integer "mileage"
-    t.date "available_on"
-    t.date "available_until"
-    t.integer "rent"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -77,6 +46,7 @@ ActiveRecord::Schema.define(version: 20170621051712) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

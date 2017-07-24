@@ -7,28 +7,141 @@
 <p id="font_for_cars_in">CARS AVAILABLE FOR RENT</p>
 <p id="btn_to_add"><%= link_to("Add A Vehicle", new_car_path)%></p>
 
+
 <div id="padding">
 <% @cars.each do |car| %>
-
-	<div id="font_for_town"><%= car.town%></div>
+	<h1><%= car.town%></h1>
 	<div id="move_car">
 		<%= image_tag car.avatar(:thumb) %><br>
+
 		<i><%= car.year %> <%= car.brand %> <%= car.model%></i><br>
 	</div>
 	<div id="font">
 		<%= number_with_delimiter(car.mileage, :delimiter => ',')%> Miles<br>
-		Available For Rent: <%= car.available_on%><br>
-		Expected Return Date: <%= car.available_on%><br>
+		<div id="date1">Available For Rent: <%= car.available_on.try(:strftime, '%B %d, %Y')%><br>
+		Expected Return Date: <%= car.available_until.try(:strftime, '%B %d, %Y')%><br>
+		</div>
 		Rent: $<%= car.rent%><br>
-		<p id="edit"><%= link_to("Edit", edit_car_path(car)) %> <%= link_to("Delete", car_path(car), method: :delete) %></p>
-		<p id="btn"><%= link_to("Select Vehicle", car_path(car)) %></p><br><br><br><br><br><br><br>
+		
+
+        
+		<p id="btn"><%= link_to("Select Vehicle", car_path(car)) %></p>
+
+     <%if current_user.id == car.user_id%>
+            <%= link_to("Delete", car_path(car), method: :delete, :id => "delete_button_float") %></p> 
+            <%= link_to("Edit", edit_car_path(car), :id => "edit_button_float") %></p>
+        <%end%><br><br><br><br><br><br><br>
+		
 	</div>
 </div>
 
 </body>
 
-<% end %>
+<style>
+
+#index_image {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#index_image:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
 
 
+/* 100% Image Width on Smaller Screens */
+</style>
+</head>
+<body>
 
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
 </div>
+
+
+
+<script>
+
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('index_image');
+var modalImg = document.getElementById("img01");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+
+<% end %>

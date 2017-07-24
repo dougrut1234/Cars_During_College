@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:available_on] = "%B %Y"

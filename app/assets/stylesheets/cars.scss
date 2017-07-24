@@ -5,3 +5,43 @@
 #font {
 	font-size: 24px;
 }
+
+#date {
+	font-size: 36px;
+	color: green;
+}
+
+#date1 {
+	font-size: 24px;
+	color: green;
+}
+
+
+#about_this_vehicle {
+	font-size: 32px;
+	margin-left: 500px;
+	text-decoration: underline;
+}
+
+#edit_button_float {
+	float: left;
+	font-size: 18px;
+	margin-top: -4px;
+	margin-left: 20px;
+	text-decoration: underline;
+}
+
+#delete_button_float {
+	float: left;
+	margin-left: 120px;
+	font-size: 18px;
+	text-decoration: underline;
+}
+
+#edit_button_float:hover {
+	color: silver;
+}
+
+#delete_button_float:hover {
+	color: silver;
+}

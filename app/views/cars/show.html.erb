@@ -3,25 +3,26 @@
 <body>
 <link href='https://fonts.googleapis.com/css?family=Averia Serif Libre' rel='stylesheet'>
 <div id="padding">
-<div id="course_wrap">
 <div id="text_in_show">
 	<p id="car_in_town"><%= @car.year %> <%= @car.brand %> <%= @car.model%> in <%= @car.town%></p><br>
-	<div id="image_resize"><%= image_tag @car.avatar(:thumb, :height => "300", :width => "auto") %></div><br>
+</div>
+	<div id="size_image"><%= image_tag @car.avatar(:medium)%></div><br>
+
 	<div id="font_in_show">
 		<%= number_with_delimiter(@car.mileage, :delimiter => ',')%> Miles<br><br>
-		Available For Rent: <%= @car.available_on%><br>
-		Expected Return Date: <%= @car.available_on%><br><br>
+		<div id="date">Available For Rent: <%= @car.available_on.try(:strftime, '%B %d, %Y')%><br>
+		Expected Return Date: <%= @car.available_until.try(:strftime, '%B %d, %Y')%><br><br></div>
 		Rent: $<%= @car.rent%><br><br><br><br>
 	</div>
-	</div>
+	
   <div id="description"><%= @car.description%></div><br><br><br>
 	</div>
 </div>
-</div>
 
 
-<div align="center">
+<div id="center">
   <h3>Interested? Send a message to owner, <%= @car.owner%></h3>
-  <%= @car.email%><br><br><br><br><br>
+  <%= mail_to @car.email, "Email Owner"%><br><br><br><br><br>
+  </div>
 
 </body>

@@ -9,7 +9,7 @@
 		<%= form_for @car, :url => "/cars/", :html => { :multipart => true } do |form| %>
 		<%= form.text_field :owner, placeholder: "Owner", :required => 'required' %><p>
 		</p>
-		<%= form.text_field :email, placeholder: "E-Mail", :required => 'required' %><p>
+		<%= form.text_field :email, placeholder: "Email", :required => 'required' %><p>
 		</p>
 
 	<p>
@@ -29,10 +29,10 @@
 		<%= form.text_field :mileage, placeholder: "Mileage", :required => 'required' %>
 	</p>
 	<p>
-		Available On: <%= form.datetime_select(:available_on, :discard_minute => true, :discard_hour => true, :order => [:month, :day])%>
+		Available On: <%= form.datetime_select(:available_on, :discard_minute => true, :discard_hour => true, :discard_year => true, :order => [:month, :day])%>
 	</p>
 	<p>
-		Return Date: <%= form.datetime_select(:available_on, :discard_minute => true, :discard_hour => true, :order => [:month, :day])%>
+		Return Date: <%= form.datetime_select(:available_until, :discard_minute => true, :discard_hour => true, :discard_year => true, :order => [:month, :day])%>
 	</p>
 	<p>
 		<%= form.text_field :rent, placeholder: "Rent", :required => 'required'%>
@@ -41,15 +41,16 @@
 		<%= form.label :description %>:
 		<%= form.text_area :description, as: :text, :input_html => {:rows => "20" }, :required => 'required' %>
 	</p>
+
+	<%= form.label :avatar %>
+	<%= form.file_field :avatar %>
+	<%= form.submit "List Your Car" %>
 	</div>
 
 
-	<%= form.submit "List Your Car" %>
-	<%= form.file_field :avatar %>
-<% end %>
 
 </div>
-
+<% end %>
 
 <div id="car_in_listing"><%=image_tag("car.png", :height => "275", :width => "auto")%></div><br><br><br><br><br>
 
